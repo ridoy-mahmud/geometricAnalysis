@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Geometric analysis</title>
+</head>
+
+<body class="font-sans">
+    <section class="mt-5">
+        <div id="main_header" class="flex justify-between w-11/12 mx-auto">
+            <div>
+                <h1 class="font-semibold text-3xl">Interactive</h1>
+                <h3 class="font-semibold text-xl opacity-60 ">Geometric analysis</h3>
+            </div>
+            <div class="my-auto">
+                <button class="w-24 rounded-md text-white py-1 font-bold bg-blue-500" type="button">Blog</button>
+            </div>
+        </div>
+    </section>
+    <section class="w-11/12 mx-auto flex gap-12 md:gap-4 sm:gap-1 mb-16">
+        <div class="cards w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  md:gap-4 lg:gap-5 mt-10">
+            <!-- Tringe Area -->
+            <div id="card" class="text-center border-2 border-opacity-20 rounded-md p-8 hover:bg-red-300">
+                <img class="mx-auto mb-5 h-3/6" src="/images/triangle.png" alt="">
+                <div class="h-3/6">
+                    <h2 class="font-bold text-xl opacity-70 mb-3">Tringle</h2>
+                    <p class="opacity-75 mb-3">Area(A) = 0.5 * b * h</p>
+                    <input id="tringle_base" class="text-center w-20 border-2 bg-slate-200 me-2 rounded-sm"
+                        placeholder="b" type="text">cm
+                    <input id="tringle_height" class="text-center w-20 border-2 bg-slate-200 me-2 rounded-sm"
+                        placeholder="h" type="text">cm
+                    <br>
+                    <button id="tringleBtn" class="bg-blue-500 w-64 mt-10 py-2 btn-cal">Calculate</button>
+                </div>
+            </div>
+            <!-- Rectangle Area -->
+            <div id="card" class="text-center border-2 border-opacity-20 rounded-md p-8">
+                <img id="image-fix" class="mx-auto mb-5 h-3/6" src="/images/rectangle.png" alt="">
+                <div class="h-3/6">
+                    <h2 class="font-bold text-xl opacity-70 mb-3">Rectangle</h2>
+                    <p class="opacity-75 mb-3">Area(A) = w * l</p>
+                    <input id="recWidth" class="text-center w-20 border-2 bg-slate-200 me-2 rounded-sm" placeholder="w"
+                        type="text">cm
+                    <input id="recLen" class="text-center w-20 border-2 bg-slate-200 me-2 rounded-sm" placeholder="l"
+                        type="text">cm
+                    <br>
+                    <button id="reactangle_btn" class="bg-blue-500 w-64 mt-10 py-2 btn-cal">Calculate</button>
+                </div>
+            </div>
+            <div id="card" class="text-center border-2 border-opacity-20 rounded-md p-8">
+                <img id="image-fix" class="mx-auto mb-5 h-3/6" src="/images/parallelogram.png" alt="">
+                <div class="h-3/6">
+                    <h2 class="font-bold text-xl opacity-70 mb-3">Parallelogram</h2>
+                    <p class="opacity-75 mb-3">Area(A) = b * h</p>
+                    <p class="opacity-60 font-semibold">b=10cm, h=12cm</p>
+                    <button id="paraBtn" class="bg-blue-500 w-64 mt-10 py-2 btn-cal">Calculate</button>
+                </div>
+            </div>
+            <div id="card" class="text-center border-2 border-opacity-20 hover:bg-green-400 rounded-md p-8">
+                <img id="image-fix" class="mx-auto mb-5 h-3/6" src="/images/rhombus.png" alt="">
+                <div class="h-3/6">
+                    <h2 class="font-bold text-xl opacity-70 mb-3">Rhombus</h2>
+                    <p class="opacity-75 mb-3">Area(A) = 0.5 * d<sub>1</sub> * d<sub>2</sub></p>
+                    <p class="opacity-60 font-semibold">d<sub>1</sub> = 16cm d<sub>2</sub> = 8cm</p>
+                    <button id="rhomBtn" class="bg-blue-500 w-64 mt-10 py-2 btn-cal">Calculate</button>
+                </div>
+            </div>
+            <div id="card" class="text-center border-2 border-opacity-20 rounded-md p-8">
+                <img id="image-fix" class="mx-auto mb-5 h-3/6" src="/images/pentagon.png" alt="">
+                <div class="h-3/6">
+                    <h2 class="font-bold text-xl opacity-70 mb-3">Pentagon</h2>
+                    <p class="opacity-75 mb-3">Area(A) = 0.5 * p * b</p>
+                    <p class="opacity-60 font-semibold">p = 6cm, b = 10cm</p>
+                    <button id="pentBtn" class="bg-blue-500 w-64 mt-10 py-2 btn-cal">Calculate</button>
+                </div>
+            </div>
+            <div id="card" class="text-center border-2 border-opacity-20 rounded-md p-8">
+                <img id="image-fix" class="mx-auto mb-5 h-3/6" src="/images/ellipse.png" alt="">
+                <div class="h-3/6">
+                    <h2 class="font-bold text-xl opacity-70 mb-3">Ellipse</h2>
+                    <p class="opacity-75 mb-3">Area(A) = пab</p>
+                    <p class="opacity-60 font-semibold">a = 10cm, b = 4cm</p>
+                    <button id="elipBtn" class="bg-blue-500 w-64 mt-10 py-2 btn-cal">Calculate</button>
+                </div>
+            </div>
+        </div>
+        <div id="comment" class="w-1/4 text-center mt-10 rounded-lg border-2 ro">
+            <h2 class="underline font-semibold mt-5 mb-4">Area Calculator </h2>
+            <div id="text_area">
+                <p></p>
+            </div>
+        </div>
+    </section>
+    <script src="/script.js"></script>
+</body>
+
+</html>
